@@ -1,0 +1,12 @@
+{
+  "name": "tuutti/oauth2-office365",
+  "description": "Office 365 OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+  "require": {
+    "league/oauth2-client": "~1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tuutti\\OAuth2\\Client\\": "src/"
+    }
+  }
+}
