@@ -99,7 +99,9 @@ class Office365 Extends AbstractProvider {
    */
   protected function checkResponse(ResponseInterface $response, $data)
   {
-    // @todo Fill this.
+    if (isset($data['error'])) {
+      throw new IdentityProviderException($response->getReasonPhrase(), $response->getStatusCode(), $response);
+    }
   }
 
   /**
