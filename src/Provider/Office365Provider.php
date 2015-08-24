@@ -11,7 +11,7 @@ use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use League\OAuth2\Client\Token\AccessToken;
 use Psr\Http\Message\ResponseInterface;
 
-class Office365 Extends AbstractProvider {
+class Office365Provider Extends AbstractProvider {
 
   const BASE_URL = 'https://login.microsoftonline.com';
   const DEFAULT_ASSERTION_TYPE = 'urn:ietf:params:oauth:client-assertion-type:jwt-bearer';
