@@ -91,7 +91,7 @@ class Office365 Extends AbstractProvider {
    */
   protected function createResourceOwner(array $response, AccessToken $token)
   {
-    // @todo Fill this.
+    return null;
   }
 
   /**
@@ -178,5 +178,16 @@ class Office365 Extends AbstractProvider {
     $prepared = $this->prepareAccessTokenResponse($response);
 
     return $this->createAccessToken($prepared, $grant);
+  }
+
+  /**
+   * Overrides AbstractProvider::getAuthorizationHeaders().
+   */
+  protected function getAuthorizationHeaders($token = null)
+  {
+    if (!$token || !$token instanceof AccessToken) {
+      throw new IdentityProviderException('Token not found.', null, null);
+    }
+    return ['Authorization' => 'Bearer ' . $token->getToken()];
   }
 }
