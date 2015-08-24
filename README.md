@@ -1,7 +1,7 @@
 # Usage
 
 ```php
-$provider = new \Tuutti\OAuth2\Client\Provider\Office365([
+$provider = new \Tuutti\OAuth2\Client\Provider\Office365Provider([
   'clientId' => 'some value',
   'redirectUri' => 'http://localhost....',
   'tenantId' => 'your tenant id',
