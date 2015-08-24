@@ -70,6 +70,7 @@ class Office365 Extends AbstractProvider {
       'urlResourceOwnerDetails',
       'tenantId',
       'thumbPrint',
+      'resource',
     ];
   }
 
@@ -81,6 +82,7 @@ class Office365 Extends AbstractProvider {
     return [
       'clientAssertion',
       'clientAssertionType',
+      'resource',
     ];
   }
 
@@ -89,6 +91,7 @@ class Office365 Extends AbstractProvider {
    */
   protected function createResourceOwner(array $response, AccessToken $token)
   {
+    // @todo Fill this.
   }
 
   /**
@@ -96,6 +99,7 @@ class Office365 Extends AbstractProvider {
    */
   protected function checkResponse(ResponseInterface $response, $data)
   {
+    // @todo Fill this.
   }
 
   /**
@@ -169,9 +173,8 @@ class Office365 Extends AbstractProvider {
     $params   = $grant->prepareRequestParameters($params, $options);
     $request  = $this->getAccessTokenRequest($params);
     $response = $this->getResponse($request);
-    print_r($response);
     $prepared = $this->prepareAccessTokenResponse($response);
-    $token    = $this->createAccessToken($prepared, $grant);
-    return $token;
+
+    return $this->createAccessToken($prepared, $grant);
   }
 }
