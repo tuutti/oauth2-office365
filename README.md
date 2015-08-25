@@ -12,3 +12,8 @@ $provider = new \Tuutti\OAuth2\Client\Provider\Office365Provider([
 $token = $provider->getAccessToken('client_credentials');
 ....
 ```
+
+```php
+$request = $provider->getAuthenticatedRequest($method, $url, $token, $options);
+$response = $provider->getResponse($request);
+```
